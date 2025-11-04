@@ -3,18 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" href="styles.css">
     <title>Wonderlust Travel- Destination Majorca</title>
 </head>
 <body>
-
+    <a class="skip" href="#intro">Skip to Main Content</a>
+    <a class="skip" href="#plan-your-trip">Skip to Plan Your Trip</a>
+    <a class="skip" href="#testimonials">Skip to Testimonials</a>
+    <a class="skip" href="#about-your-destination">Skip to About Your Destination</a>
+    <a class="skip" href="#contact-us">Skip to Contact Us</a>
     <header>
         Destination Majorca
         Let Wonderlust Travel help you plan the trip of your dreams!
         Specializing in unforgettable experiences, we offer curated trips to the breathtaking island of Majorca, a hidden gem in the Mediterranean. Whether you crave sun-drenched beaches, charming villages, or thrilling outdoor adventures, our expert team will craft the perfect itinerary tailored just for you.
     </header>
     <nav>
-        Main Navigation
+
+        <h2>Main Navigation</h2>
         <input type="checkbox" id="dropdown">
         <label for="dropdown"><span></span></label>
         <ul>
@@ -39,9 +44,16 @@
                     images/majorca-beach-square-s.jpg
                     images/majorca-beach-vertical-m.jpg
                     images/majorca-beach-horizontal-l.jpg
-
                     404px, 920px, 1280px
                     -->
+
+                    <picture>
+                        <source media="(min-width: 404px)" srcset="images/majorca-beach-square-s.jpg">
+                        <source media="(min-width: 920px)" srcset="images/majorca-beach-vertical-m.jpg">
+                        <source media="(min-width: 1280px)" srcset="images/majorca-beach-horizontal-l.jpg">
+                        <img src="images/majorca-beach-square-s.jpg" alt="Majorca beach">
+                    </picture>
+
                     <small>Photo by <a href="https://unsplash.com/@charliefirth?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Charlie Firth</a> on <a href="https://unsplash.com/photos/sea-waves-crashing-on-shore-during-sunset-HQJIQjXq1HI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></small>
                 </div>
             </section>
@@ -95,6 +107,13 @@
                         images/miranda-blake-M.png 920w
                         images/miranda-blake-L.png 1280w
                     -->
+                    <img
+                        srcset="images/miranda-blake-S.png 404w, images/miranda-blake-M.png 920w, images/miranda-blake-L.png 1280w"
+                        sizes="(width <= 600px) 404px,
+                                920px, 1280px"
+                        src="images/miranda-blake-L.png"
+                        alt="Miranda Blake">
+
                         <div>
                         Miranda Blake
                         <dl>
@@ -111,6 +130,12 @@
                         images/max-winter-M.png 920w
                         images/max-winter-L.png 1280w
                     -->
+                    <img
+                        srcset="images/max-winter-S.png 404w, images/max-winter-M.png 920w, images/max-winter-L.png 1280w"
+                        sizes="(width <= 600px) 404px,
+                                920px, 1280px"
+                        src="images/max-winter-L.png"
+                        alt="Max Winter">
                         <div>
                         Max Winter
                         <dl>
@@ -127,6 +152,12 @@
                         images/ines-villegoes-M.png 920w
                         images/ines-villegoes-L.png 1280w 
                     -->
+                    <img
+                        srcset="images/ines-villegoes-S.png 404w, images/ines-villegoes-M.png 920w, images/ines-villegoes-L.png 1280w"
+                        sizes="(width <= 600px) 404px,
+                                920px, 1280px"
+                        src="images/ines-villegoes-L.png"
+                        alt="Ines Villegoes">
                     <div>
                         Inés Villegoes
                         <dl>
@@ -143,6 +174,12 @@
                         images/carmen-lorenzo-M.png 920w
                         images/carmen-lorenzo-L.png 1280w
                     -->
+                    <img
+                        srcset="images/carmen-lorenzo-S.png 404w, images/carmen-lorenzo-M.png 920w, images/carmen-lorenzo-L.png 1280w"
+                        sizes="(width <= 600px) 404px,
+                                920px, 1280px"
+                        src="images/carmen-lorenzo-L.png"
+                        alt="Carmen Lorenzo">
                         <div>
                         Carmen Lorenzo
                         <dl>
@@ -218,64 +255,63 @@
             Contact Us <span id="required">(*required)</span>
             
                 <div>
-                    <label>First Name<span>*</span></label>
-                    <input>
+                    <label for="first-name">First Name<span>*</span></label>
+                    <input type="text" name="first-name" id="first-name" maxlength="25" required>
                 </div>
                 <div>
-                    <label>Last Name<span>*</span></label>
-                    <input>
+                    <label for="last-name">Last Name<span>*</span></label>
+                    <input type="text" name="last-name" id="last-name" maxlength="25" required>
                 </div>
                 <div>
-                    <label>Email<span>*</span></label>
-                    <input>
+                    <label for="email">Email<span>*</span></label>
+                    <input type="email" name="email" id="email" required>
                 </div>
                 <div>
-                    <label>Phone<span>*</span></label>
-                    <input>
+                    <label for="tel">Phone<span>*</span></label>
+                    <input type="tel" name="tel" id="tel" required>
                 </div>
                 <fieldset id="preferred-contact">
                 <legend>Preferred Contact Method<span>*</span></legend>
                     <div> 
-                        <input>
-                        <label>Email</label>
+                        <input id="use-email" name="method" type="radio" value="use-email" checked required>
+                        <label for="use-email">Email</label>
                     </div>
                     <div>
-                        <input>
-                        <label>Text</label>
+                        <input id="use-text" name="method" type="radio" value="use-text">
+                        <label for="use-text">Text</label>
                     </div>
                     <div>
-                        <input>
-                        <label>Phone</label>
+                        <input id="use-phone" name="method" type="radio" value="use-phone">
+                        <label for="use-phone">Phone</label>
                     </div>
                 </fieldset>
                 <fieldset id="destination">
                     <legend>Destination<span>*</span></legend>
-                    <select id="select-destination">
-                        <option>Choose</option>
-                        <option>Barcelona</option>
-                        <option>Granada</option>
-                        <option>Ibiza</option>
-                        <option>Madrid</option>
-                        <option>Majorca</option>
-                        <option>Seville</option>
-                        <option>Tenerife</option>
-                        <option>Valencia</option>
-                        <option>Other</option>
+                    <select id="select-destination" name="select-destination">
+                        <option value="">Choose</option>
+                        <option value="Barcelona">Barcelona</option>
+                        <option value="Granada">Granada</option>
+                        <option value="Ibiza">Ibiza</option>
+                        <option value="Madrid">Madrid</option>
+                        <option value="Majorca">Majorca</option>
+                        <option value="Seville">Seville</option>
+                        <option value="Tenerife">Tenerife</option>
+                        <option value="Valencia">Valencia</option>
+                        <option value="Other">Other</option>
                     </select>
                 </fieldset>
                 <fieldset id="travelTime">
                     <legend>Travel Time<span>*</span></legend>
-                    <select id="select-travel-time">
-                        <option>Choose</option>
-                        <option>Fall</option>
-                        <option>Winter</option>
-                        <option>Spring</option>
-                        <option>Summer</option>
-                        <option>Flexible</option>
+                    <select id="select-travel-time" name="select-travel-time">
+                        <option value="">Choose</option>
+                        <option value="Fall">Fall</option>
+                        <option value="Winter">Winter</option>
+                        <option value="Spring">Spring</option>
+                        <option value="Summer">Summer</option>
+                        <option value="Flexible">Flexible</option>
                     </select>
                 </fieldset>
-                <input>
-            
+                <input type="submit" id="submit" value="Submit">
         </section>
         <section id="legal">
             Legal
